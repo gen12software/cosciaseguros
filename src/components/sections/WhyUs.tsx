@@ -52,7 +52,7 @@ export function WhyUs() {
         <section id="nosotros" className="py-32 bg-white relative">
             {/* Ambient Background Glow - UPDATED FOR LIGHT THEME */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden hidden md:block">
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-blue/5 rounded-full blur-[120px]" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-200 h-200 bg-brand-blue/5 rounded-full blur-[120px]" />
             </div>
 
             <div className="container mx-auto px-6 lg:px-12 relative z-10">

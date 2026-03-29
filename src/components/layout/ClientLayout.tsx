@@ -2,6 +2,7 @@
 
 import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
+import { ErrorBoundary } from "./ErrorBoundary";
 import { usePathname } from "next/navigation";
 import { MotionConfig } from "framer-motion";
 import { useState, useEffect } from "react";
@@ -21,11 +22,13 @@ export function ClientLayout({ children }: { children: React.ReactNode }) {
     }, []);
 
     return (
-        <MotionConfig reducedMotion={skipAnimations ? "always" : "never"}>
-            {!isSiniestros && <Navbar />}
-            {children}
-            {!isSiniestros && <Footer />}
-        </MotionConfig>
+        <ErrorBoundary>
+            <MotionConfig reducedMotion={skipAnimations ? "always" : "user"}>
+                {!isSiniestros && <Navbar />}
+                {children}
+                {!isSiniestros && <Footer />}
+            </MotionConfig>
+        </ErrorBoundary>
     );
 }
 

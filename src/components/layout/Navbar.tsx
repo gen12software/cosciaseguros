@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
@@ -19,12 +19,16 @@ const navLinks = [
 export function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const lastScrollTime = useRef(0);
 
     useEffect(() => {
         const handleScroll = () => {
+            const now = Date.now();
+            if (now - lastScrollTime.current < 100) return;
+            lastScrollTime.current = now;
             setIsScrolled(window.scrollY > 20);
         };
-        window.addEventListener("scroll", handleScroll);
+        window.addEventListener("scroll", handleScroll, { passive: true });
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
@@ -51,6 +55,7 @@ export function Navbar() {
                             src="/logoCoscia.png"
                             alt="Coscia Asesores Logo"
                             fill
+                            sizes="56px"
                             className="object-cover"
                             priority
                         />
@@ -98,19 +103,8 @@ export function Navbar() {
                         )}
                     >
                         <span className="relative z-10">{isScrolled ? "Cotizar Gratis" : "Cotización Gratis"}</span>
-
                         {/* Shimmer Effect - ONLY ON DESKTOP */}
-                        <motion.div
-                            className="absolute inset-0 bg-linear-to-r from-transparent via-white/40 to-transparent skew-x-12 hidden md:block"
-                            initial={{ x: "-150%" }}
-                            animate={{ x: "150%" }}
-                            transition={{
-                                duration: 1.5,
-                                repeat: Infinity,
-                                repeatDelay: 3,
-                                ease: "easeInOut",
-                            }}
-                        />
+                        <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/40 to-transparent hidden md:block btn-shimmer" />
                     </a>
                 </div>
 

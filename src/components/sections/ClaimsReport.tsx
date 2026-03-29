@@ -108,6 +108,7 @@ export function ClaimsReport() {
     const [images, setImages] = useState<ClaimImage[]>([]);
     const [errors, setErrors] = useState<Record<string, boolean>>({});
     const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+    const [errorMsg, setErrorMsg] = useState("");
     const [isDragging, setIsDragging] = useState(false);
     const [maxDate, setMaxDate] = useState("");
     const fileInputRef = useRef<HTMLInputElement>(null);
@@ -147,7 +148,8 @@ export function ClaimsReport() {
             formData.time !== "" &&
             formData.location.trim() !== "" &&
             formData.description.trim() !== "" &&
-            images.length >= 2
+            images.length >= 2 &&
+            images.every(img => !img.isProcessing)
         );
     };
 
@@ -323,11 +325,13 @@ export function ClaimsReport() {
 
                 setTimeout(() => setStatus("idle"), 5000);
             } else {
+                const data = await response.json().catch(() => ({}));
+                setErrorMsg(data?.error || "Ocurrió un error al enviar el reporte. Por favor intentá nuevamente.");
                 setStatus("error");
                 setTimeout(() => setStatus("idle"), 5000);
             }
-        } catch (error) {
-            console.error("Error sending claim:", error);
+        } catch {
+            setErrorMsg("Ocurrió un error al enviar el reporte. Por favor intentá nuevamente.");
             setStatus("error");
             setTimeout(() => setStatus("idle"), 5000);
         }
@@ -793,7 +797,7 @@ export function ClaimsReport() {
                     {status === "error" && (
                         <div className="mb-6 p-4 bg-red-50 text-red-700 border border-red-200 rounded-xl flex items-center gap-3 text-sm">
                             <AlertCircle className="w-5 h-5 shrink-0" />
-                            <p>Ocurrió un error al enviar el reporte. Por favor intentá nuevamente.</p>
+                            <p>{errorMsg}</p>
                         </div>
                     )}
 

@@ -91,6 +91,7 @@ export function Companies() {
                                             src={company.logo}
                                             alt={`${company.name} logo`}
                                             fill
+                                            sizes="(max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
                                             style={{ transform: isMobile ? 'scale(1.5)' : 'scale(1.8)' }}
                                             className="object-contain transition-all duration-500 group-hover:scale-110"
                                         />
@@ -131,6 +132,7 @@ export function Companies() {
                                         src={company.logo}
                                         alt={`${company.name} logo`}
                                         fill
+                                        sizes="(max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
                                         className={`object-contain ${paddingClass} transition-all duration-500 group-hover:scale-110`}
                                     />
                                 </div>

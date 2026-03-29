@@ -19,7 +19,7 @@ export function Contact() {
         <section id="contacto" className="pt-32 pb-8 bg-brand-navy relative dark-section font-sans">
             {/* Background Mesh - HIDDEN ON MOBILE FOR PERFORMANCE */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden hidden md:block">
-                <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-cyan/5 rounded-full blur-[100px]" />
+                <div className="absolute top-0 right-0 w-150 h-150 bg-brand-cyan/5 rounded-full blur-[100px]" />
             </div>
 
             <div className="container mx-auto px-6 lg:px-12 relative z-10">

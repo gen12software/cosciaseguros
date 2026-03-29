@@ -1,13 +1,15 @@
 import { Hero } from "@/components/sections/Hero";
 import { Services } from "@/components/sections/Services";
-import { WhyUs } from "@/components/sections/WhyUs";
-import { About } from "@/components/sections/About";
-import { Team } from "@/components/sections/Team";
-import { HowItWorks } from "@/components/sections/HowItWorks";
-import { Testimonials } from "@/components/sections/Testimonials";
-import { FAQ } from "@/components/sections/FAQ";
-import { Companies } from "@/components/sections/Companies";
-import { Contact } from "@/components/sections/Contact";
+import dynamic from "next/dynamic";
+
+const HowItWorks  = dynamic(() => import("@/components/sections/HowItWorks").then(m => ({ default: m.HowItWorks })));
+const Companies   = dynamic(() => import("@/components/sections/Companies").then(m => ({ default: m.Companies })));
+const WhyUs       = dynamic(() => import("@/components/sections/WhyUs").then(m => ({ default: m.WhyUs })));
+const About       = dynamic(() => import("@/components/sections/About").then(m => ({ default: m.About })));
+const Team        = dynamic(() => import("@/components/sections/Team").then(m => ({ default: m.Team })));
+const Testimonials = dynamic(() => import("@/components/sections/Testimonials").then(m => ({ default: m.Testimonials })));
+const FAQ         = dynamic(() => import("@/components/sections/FAQ").then(m => ({ default: m.FAQ })));
+const Contact     = dynamic(() => import("@/components/sections/Contact").then(m => ({ default: m.Contact })));
 
 export default function Home() {
   return (
@@ -25,4 +27,3 @@ export default function Home() {
     </main>
   );
 }
-

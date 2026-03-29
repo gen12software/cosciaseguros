@@ -82,7 +82,7 @@ export function FAQ() {
     return (
         <section id="faq" className="py-24 bg-slate-50 relative font-sans">
             {/* Ambient Glow */}
-            <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[400px] h-[400px] bg-brand-blue/5 rounded-full blur-[100px] hidden md:block" />
+            <div className="absolute top-1/2 left-0 -translate-y-1/2 w-100 h-100 bg-brand-blue/5 rounded-full blur-[100px] hidden md:block" />
 
             <div className="container mx-auto px-6 max-w-4xl relative z-10">
                 <div className="text-center mb-16">

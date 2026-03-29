@@ -74,8 +74,8 @@ export function Testimonials() {
         <section className="py-24 bg-white relative overflow-hidden font-sans">
             {/* Background Glow */}
             <div className="absolute inset-0 pointer-events-none hidden md:block">
-                <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-brand-blue/5 rounded-full blur-[100px]" />
-                <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-brand-cyan/5 rounded-full blur-[100px]" />
+                <div className="absolute top-0 left-1/4 w-150 h-150 bg-brand-blue/5 rounded-full blur-[100px]" />
+                <div className="absolute bottom-0 right-1/4 w-150 h-150 bg-brand-cyan/5 rounded-full blur-[100px]" />
             </div>
 
             <div className="container mx-auto px-6 relative z-10 mb-16">
@@ -107,7 +107,7 @@ export function Testimonials() {
                     {doubledTestimonials.map((t, i) => (
                         <div
                             key={i}
-                            className="w-[320px] md:w-[450px] shrink-0 p-8 rounded-3xl border border-slate-100 bg-slate-50 transition-all duration-300 hover:bg-white hover:shadow-xl relative flex flex-col"
+                            className="w-80 md:w-112.5 shrink-0 p-8 rounded-3xl border border-slate-100 bg-slate-50 transition-all duration-300 hover:bg-white hover:shadow-xl relative flex flex-col"
                         >
                             <Quote className="w-10 h-10 text-brand-blue/10 absolute top-6 right-6" />
 

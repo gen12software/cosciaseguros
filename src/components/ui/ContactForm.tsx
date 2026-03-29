@@ -6,6 +6,7 @@ import { Send, Loader2, CheckCircle2, AlertCircle, ChevronDown } from "lucide-re
 
 export function ContactForm() {
     const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+    const [errorMsg, setErrorMsg] = useState("");
     const [selectedService, setSelectedService] = useState("");
 
     // Form values
@@ -80,11 +81,15 @@ export function ContactForm() {
                 setSelectedService("");
                 setTimeout(() => setStatus("idle"), 5000);
             } else {
+                const data = await response.json().catch(() => ({}));
+                setErrorMsg(data?.error || "Ocurrió un error al enviar el mensaje. Por favor reintente.");
                 setStatus("error");
+                setTimeout(() => setStatus("idle"), 5000);
             }
-        } catch (error) {
-            console.error("Error sending contact form:", error);
+        } catch {
+            setErrorMsg("Ocurrió un error al enviar el mensaje. Por favor reintente.");
             setStatus("error");
+            setTimeout(() => setStatus("idle"), 5000);
         }
     };
 
@@ -104,7 +109,7 @@ export function ContactForm() {
                 variants={successVariants}
                 initial="hidden"
                 animate="visible"
-                className="bg-white/5 p-8 md:p-12 rounded-3xl shadow-sm border border-emerald-500/30 flex flex-col items-center justify-center text-center h-full min-h-[400px] backdrop-blur-md"
+                className="bg-white/5 p-8 md:p-12 rounded-3xl shadow-sm border border-emerald-500/30 flex flex-col items-center justify-center text-center h-full min-h-100 backdrop-blur-md"
             >
                 <div className="w-20 h-20 bg-emerald-500/20 rounded-full flex items-center justify-center mb-6">
                     <CheckCircle2 className="w-10 h-10 text-emerald-400" />
@@ -286,7 +291,7 @@ export function ContactForm() {
             {status === "error" && (
                 <div className="mb-6 p-4 bg-red-500/10 text-red-200 border border-red-500/20 rounded-xl flex items-center gap-3 text-sm">
                     <AlertCircle className="w-5 h-5 shrink-0" />
-                    <p>Ocurrió un error al enviar el mensaje. Por favor reintente.</p>
+                    <p>{errorMsg}</p>
                 </div>
             )}
 
