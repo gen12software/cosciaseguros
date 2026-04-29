@@ -43,6 +43,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.cosciaasesores.com",
   },
+  verification: {
+    google: "P8xRrgf7LPRFWa5E47szMAQXvNi7PxKN5sNNy77oq-A",
+  },
 };
 
 export default function RootLayout({
