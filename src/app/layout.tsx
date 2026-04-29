@@ -57,7 +57,7 @@ export default function RootLayout({
     <html lang="es" className="scroll-smooth">
       <head>
         <StructuredData />
-        {/* Google Ads tag */}
+        {/* Google Ads + Analytics tag */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18123731177" />
         <script
           dangerouslySetInnerHTML={{
@@ -66,6 +66,7 @@ export default function RootLayout({
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
               gtag('config', 'AW-18123731177');
+              gtag('config', 'G-WDJF4QJ6MP');
             `,
           }}
         />
