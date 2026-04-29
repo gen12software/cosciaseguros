@@ -77,7 +77,12 @@ export function ContactForm() {
 
             if (response.ok) {
                 if (typeof window !== "undefined" && typeof (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag === "function") {
-                    ((window as unknown as { gtag: (...args: unknown[]) => void }).gtag)("event", "conversion", { send_to: "AW-18123731177/Is57CM-knaQcEOnhiMJD" });
+                    ((window as unknown as { gtag: (...args: unknown[]) => void }).gtag)("event", "conversion", {
+                        send_to: "AW-18123731177/Is57CM-knaQcEOnhiMJD",
+                        user_data: {
+                            email: formData.email,
+                        },
+                    });
                 }
                 setStatus("success");
                 setFormData({ name: "", email: "", phone: "", message: "" });
