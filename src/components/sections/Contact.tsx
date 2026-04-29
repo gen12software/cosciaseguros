@@ -49,37 +49,37 @@ export function Contact() {
                         <div className="space-y-12 border-l-2 border-white/10 pl-8">
                             <div className="group">
                                 <div className="text-xs font-bold uppercase tracking-widest text-brand-slate mb-4">WhatsApp Directo</div>
-                                <div className="flex items-center gap-6">
+                                <a href="https://wa.me/5491158276780" target="_blank" rel="noopener noreferrer" className="flex items-center gap-6">
                                     <div className="w-14 h-14 rounded-2xl bg-linear-to-br from-brand-blue/20 to-brand-cyan/20 border border-white/10 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform shadow-[0_0_30px_-10px_rgba(6,182,212,0.3)]">
                                         <MessageCircle className="w-6 h-6 text-brand-cyan" />
                                     </div>
                                     <div className="text-2xl font-bold text-white hover:text-brand-blue transition-colors">11 5827 6780</div>
-                                </div>
+                                </a>
                             </div>
 
                             <div className="group">
                                 <div className="text-xs font-bold uppercase tracking-widest text-brand-slate mb-4">Correo Electrónico</div>
-                                <div className="flex items-center gap-6">
+                                <a href="mailto:cosciaasesores@gmail.com" className="flex items-center gap-6">
                                     <div className="w-14 h-14 rounded-2xl bg-linear-to-br from-brand-blue/20 to-brand-cyan/20 border border-white/10 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform shadow-[0_0_30px_-10px_rgba(6,182,212,0.3)]">
                                         <Mail className="w-6 h-6 text-brand-cyan" />
                                     </div>
-                                    <div className="text-lg sm:text-2xl font-bold text-white hover:text-brand-blue transition-colors break-all">
+                                    <div className="text-sm sm:text-xl font-bold text-white hover:text-brand-blue transition-colors break-all">
                                         cosciaasesores@gmail.com
                                     </div>
-                                </div>
+                                </a>
                             </div>
 
                             <div className="group">
                                 <div className="text-xs font-bold uppercase tracking-widest text-brand-slate mb-4">Oficina Central</div>
-                                <div className="flex items-center gap-6">
+                                <a href="https://maps.google.com/?q=Año+1852+Nº+8,+El+Palomar,+Buenos+Aires" target="_blank" rel="noopener noreferrer" className="flex items-center gap-6">
                                     <div className="w-14 h-14 rounded-2xl bg-linear-to-br from-brand-blue/20 to-brand-cyan/20 border border-white/10 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform shadow-[0_0_30px_-10px_rgba(6,182,212,0.3)]">
                                         <MapPin className="w-6 h-6 text-brand-cyan" />
                                     </div>
-                                    <div className="text-xl font-bold text-white leading-tight">
+                                    <div className="text-xl font-bold text-white hover:text-brand-blue transition-colors leading-tight">
                                         Año 1852 Nº 8 - El Palomar<br />
                                         <span className="font-normal text-brand-slate text-base">Buenos Aires, Argentina</span>
                                     </div>
-                                </div>
+                                </a>
                                 {/* Modern Google Maps Embed */}
                                 <div className="mt-8 rounded-2xl overflow-hidden border border-white/10 shadow-2xl relative h-48 w-full group/map">
                                     <iframe

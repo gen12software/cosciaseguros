@@ -44,6 +44,10 @@ body {
   overflow-x: hidden;
 }
 
+.container {
+  max-width: 1400px;
+}
+
 /* Typography Overrides */
 h1,
 h2,

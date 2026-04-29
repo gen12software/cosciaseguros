@@ -76,6 +76,9 @@ export function ContactForm() {
             });
 
             if (response.ok) {
+                if (typeof window !== "undefined" && typeof (window as Window & { gtag?: (...args: unknown[]) => void }).gtag === "function") {
+                    (window as Window & { gtag: (...args: unknown[]) => void }).gtag("event", "conversion", { send_to: "AW-18123731177/Is57CM-knaQcEOnhiMJD" });
+                }
                 setStatus("success");
                 setFormData({ name: "", email: "", phone: "", message: "" });
                 setSelectedService("");

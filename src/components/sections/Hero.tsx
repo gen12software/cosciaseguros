@@ -23,7 +23,7 @@ export function Hero() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
-                            className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-white leading-none tracking-tight"
+                            className="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-white leading-none tracking-tight"
                         >
                             Tu Futuro <br />
                             <span className="text-brand-cyan">

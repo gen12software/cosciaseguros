@@ -54,6 +54,18 @@ export default function RootLayout({
     <html lang="es" className="scroll-smooth">
       <head>
         <StructuredData />
+        {/* Google Ads tag */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18123731177" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-18123731177');
+            `,
+          }}
+        />
       </head>
       <body className="font-sans antialiased text-brand-navy bg-brand-silver">
         <ClientLayout>
