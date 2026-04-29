@@ -84,6 +84,9 @@ export function ContactForm() {
                         },
                     });
                 }
+                if (typeof window !== "undefined" && typeof (window as unknown as { fbq?: (...args: unknown[]) => void }).fbq === "function") {
+                    ((window as unknown as { fbq: (...args: unknown[]) => void }).fbq)("track", "Lead", { email: formData.email });
+                }
                 setStatus("success");
                 setFormData({ name: "", email: "", phone: "", message: "" });
                 setSelectedService("");
