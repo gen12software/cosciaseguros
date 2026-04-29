@@ -71,7 +71,7 @@ export function Contact() {
 
                             <div className="group">
                                 <div className="text-xs font-bold uppercase tracking-widest text-brand-slate mb-4">Oficina Central</div>
-                                <a href="https://maps.google.com/?q=Año+1852+Nº+8,+El+Palomar,+Buenos+Aires" target="_blank" rel="noopener noreferrer" className="flex items-center gap-6">
+                                <a href="https://maps.app.goo.gl/fVJbztVW5aQeNkX49" target="_blank" rel="noopener noreferrer" className="flex items-center gap-6">
                                     <div className="w-14 h-14 rounded-2xl bg-linear-to-br from-brand-blue/20 to-brand-cyan/20 border border-white/10 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform shadow-[0_0_30px_-10px_rgba(6,182,212,0.3)]">
                                         <MapPin className="w-6 h-6 text-brand-cyan" />
                                     </div>
@@ -83,7 +83,7 @@ export function Contact() {
                                 {/* Modern Google Maps Embed */}
                                 <div className="mt-8 rounded-2xl overflow-hidden border border-white/10 shadow-2xl relative h-48 w-full group/map">
                                     <iframe
-                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.4756535282473!2d-58.59104082425936!3d-34.61330387295147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb86d87e07e99%3A0x93301064972e2db1!2zQcOxbyAxODUyIDgsIEIxNjg0IEVsIFBhbG9tYXIsIFByb3ZpbmNpYSBkZSBCdWVub3MgQWlyZXM!5e0!3m2!1ses-419!2sar!4v1714400000000!5m2!1ses-419!2sar"
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d500!2d-58.5875769!3d-34.608143!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb84533b579c9%3A0x29187b2f684bcd68!2sCoscia%20Asesores%20-%20Productores%20de%20Seguro!5e0!3m2!1ses-419!2sar!4v1714400000000!5m2!1ses-419!2sar"
                                         width="100%"
                                         height="100%"
                                         style={{ border: 0, filter: 'grayscale(0.6) invert(0.9) contrast(1.2)' }}
